@@ -1,0 +1,15 @@
+C:\Users\Migui\source\repos\TravelGateXPrueba\TravelGateXPrueba\bin\Debug\net6.0\TravelGateXPrueba.exe
+C:\Users\Migui\source\repos\TravelGateXPrueba\TravelGateXPrueba\bin\Debug\net6.0\TravelGateXPrueba.deps.json
+C:\Users\Migui\source\repos\TravelGateXPrueba\TravelGateXPrueba\bin\Debug\net6.0\TravelGateXPrueba.runtimeconfig.json
+C:\Users\Migui\source\repos\TravelGateXPrueba\TravelGateXPrueba\bin\Debug\net6.0\TravelGateXPrueba.dll
+C:\Users\Migui\source\repos\TravelGateXPrueba\TravelGateXPrueba\bin\Debug\net6.0\TravelGateXPrueba.pdb
+C:\Users\Migui\source\repos\TravelGateXPrueba\TravelGateXPrueba\obj\Debug\net6.0\TravelGateXPrueba.csproj.AssemblyReference.cache
+C:\Users\Migui\source\repos\TravelGateXPrueba\TravelGateXPrueba\obj\Debug\net6.0\TravelGateXPrueba.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Migui\source\repos\TravelGateXPrueba\TravelGateXPrueba\obj\Debug\net6.0\TravelGateXPrueba.AssemblyInfoInputs.cache
+C:\Users\Migui\source\repos\TravelGateXPrueba\TravelGateXPrueba\obj\Debug\net6.0\TravelGateXPrueba.AssemblyInfo.cs
+C:\Users\Migui\source\repos\TravelGateXPrueba\TravelGateXPrueba\obj\Debug\net6.0\TravelGateXPrueba.csproj.CoreCompileInputs.cache
+C:\Users\Migui\source\repos\TravelGateXPrueba\TravelGateXPrueba\obj\Debug\net6.0\TravelGateXPrueba.dll
+C:\Users\Migui\source\repos\TravelGateXPrueba\TravelGateXPrueba\obj\Debug\net6.0\refint\TravelGateXPrueba.dll
+C:\Users\Migui\source\repos\TravelGateXPrueba\TravelGateXPrueba\obj\Debug\net6.0\TravelGateXPrueba.pdb
+C:\Users\Migui\source\repos\TravelGateXPrueba\TravelGateXPrueba\obj\Debug\net6.0\TravelGateXPrueba.genruntimeconfig.cache
+C:\Users\Migui\source\repos\TravelGateXPrueba\TravelGateXPrueba\obj\Debug\net6.0\ref\TravelGateXPrueba.dll
