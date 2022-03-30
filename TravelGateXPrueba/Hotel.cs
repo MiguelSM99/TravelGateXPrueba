@@ -8,7 +8,7 @@ namespace TravelGateXPrueba
 {
     public class Hotel
     {
-        private int code;
+        private string code;
         private string name;
         private string city;
         private List<Room> rooms;
@@ -17,7 +17,7 @@ namespace TravelGateXPrueba
         {
         }
 
-        public Hotel(int code, string name, string city, List<Room> rooms)
+        public Hotel(string code, string name, string city, List<Room> rooms)
         {
             this.Code = code;
             this.Name = name;
@@ -25,9 +25,15 @@ namespace TravelGateXPrueba
             this.rooms = rooms;
         }
 
-        public int Code { get => code; set => code = value; }
+        public string Code { get => code; set => code = value; }
         public string Name { get => name; set => name = value; }
         public string City { get => city; set => city = value; }
         public List<Room> Rooms { get => rooms; set => rooms = value; }
+    }
+
+    public class ListaHoteles
+    {
+        public List<Hotel> hotels;
+        public List<Hotel> Hotels { get; set; }
     }
 }

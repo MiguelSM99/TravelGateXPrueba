@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "LvepWsOIfCQWyA2nv77l66RAzM7iVVRQuECv1l1Qg3mNuT51cJaZM7TDPE+nYBKgMWRXiMcZ1W8wuUhqLX/yTQ==",
+  "dgSpecHash": "KJdU0H3qra/rlP/35pPk2njteGECbGWbvW01elY99A54WTVMJfobV1essNvW7JAEss2KraK30wTCDKWep17c4A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Migui\\source\\repos\\TravelGateXPrueba\\TravelGateXPrueba\\TravelGateXPrueba.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Migui\\source\\repos\\TravelgateXPrueba\\TravelGateXPrueba\\TravelGateXPrueba.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Migui\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
