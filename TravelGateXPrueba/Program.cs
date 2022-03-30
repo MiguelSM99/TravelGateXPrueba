@@ -3,6 +3,8 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
+using Classes.TravelGateXPrueba;
+using TravelGateXPrueba.Connections;
 
 namespace TravelgateXPrueba
 {
@@ -10,8 +12,13 @@ namespace TravelgateXPrueba
     {
         static void Main(string[] args)
         {
-            MainStart mainStart = new MainStart();
-            mainStart.PruebaConexion().Wait();
+            ConexionAtalaya ca = new ConexionAtalaya();
+            ListaHotelesAtalaya la = ca.Conexion();
+
+            ConexionResort lr = new ConexionResort();
+            ListaHotelesResort lhr = lr.Conexion();
+
+            /*MainStart mainStart = new MainStart();
             List<Room> rooms = new List<Room>();
             Room habitacion = new Room("Room1", 2, "Desayuno", 15.5);
             Room habitacion1 = new Room("Room1", 2, "Desayuno", 15.5);
@@ -19,11 +26,13 @@ namespace TravelgateXPrueba
             rooms.Add(habitacion1);
             Hotel hotelito = new Hotel("1", "Atalaya", "City", rooms);
             string jsonHotelito = System.Text.Json.JsonSerializer.Serialize(hotelito);
-            //Console.WriteLine(jsonHotelito);
+            Console.WriteLine(jsonHotelito);*/
+
         }
 
-        public async Task PruebaConexion()
+        /*public async Task PruebaConexion()
         {
+
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://www.mocky.io/");
             client.DefaultRequestHeaders.Accept.Clear();
@@ -42,7 +51,7 @@ namespace TravelgateXPrueba
                 }
             }
 
-        }
+        }*/
     }
 }
 
