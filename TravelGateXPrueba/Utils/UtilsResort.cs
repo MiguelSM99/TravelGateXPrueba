@@ -20,7 +20,7 @@ namespace TravelGateXPrueba.Utils
                 hotelTmp.Name = hotel.Name;
                 hotelTmp.City = hotel.Location;
                 hotelTmp.Code = hotel.Code;
-                hotelTmp.Rooms = hotel.Rooms;
+                //hotelTmp.Rooms = hotel.Rooms;
                 ListaHoteles.hotels.Add(hotelTmp);
             }
             return ListaHoteles;
