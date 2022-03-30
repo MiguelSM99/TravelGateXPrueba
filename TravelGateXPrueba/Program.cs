@@ -1,10 +1,12 @@
 ﻿using TravelGateXPrueba;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using Classes.TravelGateXPrueba;
 using TravelGateXPrueba.Connections;
+using TravelGateXPrueba.Classes;
+using TravelGateXPrueba.Utils;
+using System.Linq;
 
 namespace TravelgateXPrueba
 {
@@ -12,11 +14,24 @@ namespace TravelgateXPrueba
     {
         static void Main(string[] args)
         {
+            ListaHoteles listaHotel = new ListaHoteles();
+            listaHotel.hotels = new List<Hotels>();
             ConexionAtalaya ca = new ConexionAtalaya();
             ListaHotelesAtalaya la = ca.Conexion();
+            UtilsAtalaya uA = new UtilsAtalaya();
 
             ConexionResort lr = new ConexionResort();
             ListaHotelesResort lhr = lr.Conexion();
+            UtilsResort uR = new UtilsResort();
+
+            ListaHoteles transAt = uA.transAtalaya(la);
+            ListaHoteles transRe = uR.transResort(lhr);
+
+            listaHotel.hotels.AddRange(transRe.hotels);
+            listaHotel.hotels.AddRange(transAt.hotels);
+            string joselito = JsonConvert.SerializeObject(listaHotel);
+
+            Console.WriteLine(joselito);
 
             /*MainStart mainStart = new MainStart();
             List<Room> rooms = new List<Room>();
