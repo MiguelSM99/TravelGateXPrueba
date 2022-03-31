@@ -1,9 +1,4 @@
 ﻿using Classes.TravelGateXPrueba;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TravelGateXPrueba.Classes
 {
@@ -35,6 +30,5 @@ namespace TravelGateXPrueba.Classes
     public class ListaHoteles
     {
         public List<Hotels> hotels;
-        public List<Hotels> Hotels { get; set; }
     }
 }

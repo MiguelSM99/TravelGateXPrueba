@@ -1,18 +1,18 @@
 ﻿namespace TravelGateXPrueba.Classes
 {
-    public class Ac
+    public class Acs
     {
         private string room;
-        private string price;
+        private double price;
 
         public string Room { get => room; set => room = value; }
-        public string Price { get => price; set => price = value; }
+        public double Price { get => price; set => price = value; }
 
-        public Ac()
+        public Acs()
         {
         }
 
-        public Ac(string room, string price)
+        public Acs(string room, double price)
         {
             this.Room = room;
             this.Price = price;

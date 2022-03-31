@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Classes.TravelGateXPrueba;
 using TravelGateXPrueba.Classes;
 
 namespace TravelGateXPrueba
@@ -13,13 +9,23 @@ namespace TravelGateXPrueba
         {
             ListaHoteles ListaHoteles = new ListaHoteles();
             ListaHoteles.hotels = new List<Hotels>();
-            Hotels hotelTmp = new Hotels();
             foreach (var hotel in la.hotels)
             {
+                Hotels hotelTmp = new Hotels();
                 hotelTmp.Name = hotel.Name;
                 hotelTmp.City = hotel.City;
                 hotelTmp.Code = hotel.Code;
-                //hotelTmp.Rooms = hotel.Rooms;
+                List<Room> listRoomTmp = new List<Room>();
+                foreach(RoomAtalaya room in hotel.Rooms)
+                {
+                    Room roomTmp = new Room();
+                    roomTmp.Code = room.Code;
+                    roomTmp.Name = room.Name;
+                    roomTmp.Meal_plan = room.Meal_plan;
+                    roomTmp.Price = room.Price;
+                    listRoomTmp.Add(roomTmp);
+                }
+                hotelTmp.Rooms = listRoomTmp;
                 ListaHoteles.hotels.Add(hotelTmp);
             }
             return ListaHoteles;

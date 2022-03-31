@@ -1,31 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TravelGateXPrueba.Classes
+﻿namespace TravelGateXPrueba.Classes
 {
     public class RoomResort
     {
         private string code;
         private string name;
         private string meal_plan;
+        private double price;
         
         public RoomResort()
         {
         }
 
-        public RoomResort(string code, string name, string meal_plan)
+        public RoomResort(string code, string name, string meal_plan, double price)
         {
             this.code = code;
             this.name = name;
             this.Meal_plan = meal_plan;
+            this.price = price;
         }
 
         public string Code { get => code; set => code = value; }
         public string Name { get => name; set => name = value; }
         public string Meal_plan { get => meal_plan; set => meal_plan = value; }
+        public double Price { get => price; set => price = value; }
 
         public class ListaRoomResort
         {

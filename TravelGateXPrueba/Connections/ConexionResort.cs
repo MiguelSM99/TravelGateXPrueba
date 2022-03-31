@@ -1,11 +1,5 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
-using TravelGateXPrueba;
 using TravelGateXPrueba.Classes;
 using static TravelGateXPrueba.Classes.MealPlanResort;
 using static TravelGateXPrueba.Classes.RoomResort;
@@ -50,13 +44,14 @@ namespace Classes.TravelGateXPrueba
                                                 if(room.Meal_plan == null)
                                                 {
                                                     room.Meal_plan = meal.Code;
+                                                    room.Price = meal.Price;
                                                     listaRoomResort.rooms.Add(room);
                                                     oldRoom = room;
                                                 } else
                                                 {
                                                     if(meal.Code != room.Meal_plan)
                                                     {
-                                                        RoomResort roomResort = new RoomResort(room.Code, room.Name, meal.Code);
+                                                        RoomResort roomResort = new RoomResort(room.Code, room.Name, meal.Code, meal.Price);
                                                         listaRoomResort.rooms.Add(roomResort);
                                                     }
                                                 }
@@ -71,8 +66,8 @@ namespace Classes.TravelGateXPrueba
                             }
                         }
                     }
-                    string joselito = JsonConvert.SerializeObject(resortHotels);
-                    Console.WriteLine(joselito);
+                    //string jsonNew = JsonConvert.SerializeObject(resortHotels);
+                    //Console.WriteLine(jsonNew);
                     return resortHotels;
                 }
                 else

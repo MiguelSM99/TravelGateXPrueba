@@ -1,10 +1,5 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
 using TravelGateXPrueba;
 using TravelGateXPrueba.Classes;
 using static TravelGateXPrueba.Classes.MealPlanAtalaya;
@@ -41,48 +36,48 @@ namespace Classes.TravelGateXPrueba
                                     var mealsContent = meals.Content;
                                     json = mealsContent.ReadAsStringAsync().Result;
                                     ListaMealPlanAtalaya atalayaMeals = JsonConvert.DeserializeObject<ListaMealPlanAtalaya>(json);
-                                    Console.WriteLine(atalayaMeals.meal_plans);
                                     foreach (var hotel in atalayaHotels.hotels)
                                     {
-                                        ListaRoomAtalaya listaRoomAtalaya = new ListaRoomAtalaya();
-                                        listaRoomAtalaya.rooms_type = new List<RoomAtalaya>();
-                                        foreach (RoomAtalaya room in hotel.Rooms)
+                                        ListaRoomAtalaya listaRoomResort = new ListaRoomAtalaya();
+                                        listaRoomResort.rooms_type = new List<RoomAtalaya>();
+                                        foreach (RoomAtalaya room in atalayaRooms.rooms_type)
                                         {
-                                            foreach (MealPlanAtalaya meal in atalayaMeals.Meal_plans)
+                                            foreach (MealPlanAtalaya meal in atalayaMeals.meal_plans)
                                             {
-
-                                                if (meal == room.Code)
+                                                if (room.Hotels.Contains(hotel.Code))
                                                 {
-                                                    if (meal.Hotel == hotel.Code)
+                                                    if (meal.Hotel.Ave.Count > 0)
                                                     {
-                                                        if (room.Meal_plan == null)
+                                                        foreach(Ave ave in meal.Hotel.Ave)
                                                         {
-                                                            room.Meal_plan = meal.Code;
-                                                            listaRoomResort.rooms.Add(room);
-                                                            oldRoom = room;
-                                                        }
-                                                        else
-                                                        {
-                                                            if (meal.Code != room.Meal_plan)
+                                                            if(room.Code == ave.Room)
                                                             {
-                                                                RoomResort roomResort = new RoomResort(room.Code, room.Name, meal.Code);
-                                                                listaRoomResort.rooms.Add(roomResort);
+                                                                RoomAtalaya roomAtalaya = new RoomAtalaya(null, room.Code, room.Name, meal.Code, ave.Price);
+                                                                listaRoomResort.rooms_type.Add(roomAtalaya);
+                                                            }
+                                                        }
+                                                    } if (meal.Hotel.Acs.Count > 0)
+                                                    {
+                                                        foreach (Acs ac in meal.Hotel.Acs)
+                                                        {
+                                                            if (room.Code == ac.Room)
+                                                            {
+                                                                RoomAtalaya roomAtalaya = new RoomAtalaya(null, room.Code, room.Name, meal.Code, ac.Price);
+                                                                listaRoomResort.rooms_type.Add(roomAtalaya);
                                                             }
                                                         }
                                                     }
                                                 }
-                                                else
-                                                {
-
-                                                }
                                             }
                                         }
-                                        hotel.Rooms = listaRoomResort.rooms;
+                                        hotel.Rooms = listaRoomResort.rooms_type;
                                     }
                                 }
                             }
                         }
                     }
+                    //string jsonNew = JsonConvert.SerializeObject(atalayaHotels);
+                    //Console.WriteLine(jsonNew);
                     return atalayaHotels;
                 }
                 else

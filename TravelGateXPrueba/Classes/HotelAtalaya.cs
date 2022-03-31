@@ -1,10 +1,4 @@
-﻿using Classes.TravelGateXPrueba;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TravelGateXPrueba.Classes;
+﻿using TravelGateXPrueba.Classes;
 
 namespace TravelGateXPrueba
 {
@@ -36,6 +30,5 @@ namespace TravelGateXPrueba
     public class ListaHotelesAtalaya
     {
         public List<HotelAtalaya> hotels;
-        public List<HotelAtalaya> Hotels { get; set; }
     }
 }

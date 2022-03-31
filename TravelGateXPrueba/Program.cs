@@ -1,11 +1,8 @@
 ﻿using TravelGateXPrueba;
-
-using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using Classes.TravelGateXPrueba;
 using TravelGateXPrueba.Classes;
 using TravelGateXPrueba.Utils;
-using System.Linq;
 
 namespace TravelgateXPrueba
 {
@@ -29,20 +26,9 @@ namespace TravelgateXPrueba
 
             listaHotel.hotels.AddRange(transRe.hotels);
             listaHotel.hotels.AddRange(transAt.hotels);
-            string joselito = JsonConvert.SerializeObject(listaHotel);
+            string jsonNew = JsonConvert.SerializeObject(listaHotel);
 
-            //Console.WriteLine(joselito);
-
-            /*MainStart mainStart = new MainStart();
-            List<Room> rooms = new List<Room>();
-            Room habitacion = new Room("Room1", 2, "Desayuno", 15.5);
-            Room habitacion1 = new Room("Room1", 2, "Desayuno", 15.5);
-            rooms.Add(habitacion);
-            rooms.Add(habitacion1);
-            Hotel hotelito = new Hotel("1", "Atalaya", "City", rooms);
-            string jsonHotelito = System.Text.Json.JsonSerializer.Serialize(hotelito);
-            Console.WriteLine(jsonHotelito);*/
-
+            Console.WriteLine(jsonNew);
         }
 
         /*public async Task PruebaConexion()
