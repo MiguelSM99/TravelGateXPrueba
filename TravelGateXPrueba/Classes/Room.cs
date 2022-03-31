@@ -10,14 +10,14 @@ namespace Classes.TravelGateXPrueba
     public class Room
     {
         private string name;
-        private int room_type;
+        private string room_type;
         private string meals_plan;
         private double price;
         public Room()
         {
         }
 
-        public Room(string name, int room_type, string meals_plan, double price)
+        public Room(string name, string room_type, string meals_plan, double price)
         {
             this.Name = name;
             this.Room_type = room_type;
@@ -26,7 +26,7 @@ namespace Classes.TravelGateXPrueba
         }
 
         public string Name { get => name; set => name = value; }
-        public int Room_type { get => room_type; set => room_type = value; }
+        public string Room_type { get => room_type; set => room_type = value; }
         public string Meals_plan { get => meals_plan; set => meals_plan = value; }
         public double Price { get => price; set => price = value; }
     }

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TravelGateXPrueba;
 using TravelGateXPrueba.Classes;
+using static TravelGateXPrueba.Classes.MealPlanAtalaya;
 using static TravelGateXPrueba.Classes.RoomAtalaya;
 
 namespace Classes.TravelGateXPrueba
@@ -33,49 +34,83 @@ namespace Classes.TravelGateXPrueba
                             var roomsContent = rooms.Content;
                             json = roomsContent.ReadAsStringAsync().Result;
                             ListaRoomAtalaya atalayaRooms = JsonConvert.DeserializeObject<ListaRoomAtalaya>(json);
-                            foreach (var hotel in atalayaHotels.hotels)
+                            using (HttpResponseMessage meals = client.GetAsync("http://www.mocky.io/v2/5e4a7e282f0000490097d252").Result)
                             {
-                                hotel.Rooms = new List<RoomAtalaya>();
-                                foreach (RoomAtalaya room in atalayaRooms.rooms_type)
+                                if (meals.IsSuccessStatusCode)
                                 {
-                                    foreach (var codeHotel in room.Hotels)
+                                    var mealsContent = meals.Content;
+                                    json = mealsContent.ReadAsStringAsync().Result;
+                                    ListaMealPlanAtalaya atalayaMeals = JsonConvert.DeserializeObject<ListaMealPlanAtalaya>(json);
+                                    Console.WriteLine(atalayaMeals.meal_plans);
+                                    foreach (var hotel in atalayaHotels.hotels)
                                     {
-                                        if (codeHotel == hotel.Code)
+                                        ListaRoomAtalaya listaRoomAtalaya = new ListaRoomAtalaya();
+                                        listaRoomAtalaya.rooms_type = new List<RoomAtalaya>();
+                                        foreach (RoomAtalaya room in hotel.Rooms)
                                         {
-                                            hotel.Rooms.Add(room);
+                                            foreach (MealPlanAtalaya meal in atalayaMeals.Meal_plans)
+                                            {
+
+                                                if (meal == room.Code)
+                                                {
+                                                    if (meal.Hotel == hotel.Code)
+                                                    {
+                                                        if (room.Meal_plan == null)
+                                                        {
+                                                            room.Meal_plan = meal.Code;
+                                                            listaRoomResort.rooms.Add(room);
+                                                            oldRoom = room;
+                                                        }
+                                                        else
+                                                        {
+                                                            if (meal.Code != room.Meal_plan)
+                                                            {
+                                                                RoomResort roomResort = new RoomResort(room.Code, room.Name, meal.Code);
+                                                                listaRoomResort.rooms.Add(roomResort);
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                else
+                                                {
+
+                                                }
+                                            }
                                         }
+                                        hotel.Rooms = listaRoomResort.rooms;
                                     }
                                 }
                             }
                         }
                     }
                     return atalayaHotels;
-                } else
+                }
+                else
                 {
                     return null;
                 }
             }
         }
     }
-        /*
-        public async Task ConexionResort()
+    /*
+    public async Task ConexionResort()
+    {
+        HttpClient client = new HttpClient();
+        client.BaseAddress = new Uri("http://www.mocky.io/");
+        client.DefaultRequestHeaders.Accept.Clear();
+        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        using (HttpResponseMessage response = await client.GetAsync("http://www.mocky.io/v2/5e4a7e4f2f00005d0097d253"))
         {
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("http://www.mocky.io/");
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            using (HttpResponseMessage response = await client.GetAsync("http://www.mocky.io/v2/5e4a7e4f2f00005d0097d253"))
+            if (response.IsSuccessStatusCode)
             {
-                if (response.IsSuccessStatusCode)
-                {
-                    string json = await response.Content.ReadAsStringAsync();
-                    ListaHotelesAtalaya atalaya = JsonConvert.DeserializeObject<ListaHotelesAtalaya>(json);
+                string json = await response.Content.ReadAsStringAsync();
+                ListaHotelesAtalaya atalaya = JsonConvert.DeserializeObject<ListaHotelesAtalaya>(json);
 
-                    foreach (var hotel in atalaya.hotels)
-                    {
-                        Console.WriteLine(hotel.Name);
-                    }
+                foreach (var hotel in atalaya.hotels)
+                {
+                    Console.WriteLine(hotel.Name);
                 }
             }
-        }*/
+        }
+    }*/
 }
