@@ -1,2 +1,2 @@
 # TravelGateXPrueba
-Prueba de candidatura para TravelGateX
+Punto 1 de la prueba de candidatura para TravelGateX
