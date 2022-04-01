@@ -49,9 +49,13 @@ namespace TravelgateXPrueba
         private static string Punto2(ListaHoteles listaHoteles, IDictionary<string, string> mealPlanCity, double max_price, bool cheap, string cheaper_city)
         {
             List<ListaHoteles> itineraryList = new List<ListaHoteles>();
-            Room cheapestRoom = null;
-            if (cheap) { cheapestRoom = CheckCheapest(listaHoteles, cheaper_city); }
-            cheapestRoom.Price = (cheapestRoom.Price * 2) * 3;
+
+            Room cheapestRoom = new Room();
+
+            if (cheap) { 
+                cheapestRoom = CheckCheapest(listaHoteles, cheaper_city); 
+            }
+
             foreach (Hotel hotel in listaHoteles.hotels)
             {
                 if (hotel.City == "Cancun")
@@ -141,6 +145,7 @@ namespace TravelgateXPrueba
                     }
                 }
             }
+            roomTmp.Price = (roomTmp.Price * 2) * 3;
             return roomTmp;
         }
 
