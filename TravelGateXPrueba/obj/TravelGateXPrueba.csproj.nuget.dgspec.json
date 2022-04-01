@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Migui\\source\\repos\\TravelgateXPrueba\\TravelGateXPrueba\\TravelGateXPrueba.csproj": {}
+    "C:\\Users\\Integraciones\\source\\repos\\TravelGateXPrueba\\TravelGateXPrueba\\TravelGateXPrueba.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Migui\\source\\repos\\TravelgateXPrueba\\TravelGateXPrueba\\TravelGateXPrueba.csproj": {
+    "C:\\Users\\Integraciones\\source\\repos\\TravelGateXPrueba\\TravelGateXPrueba\\TravelGateXPrueba.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Migui\\source\\repos\\TravelgateXPrueba\\TravelGateXPrueba\\TravelGateXPrueba.csproj",
+        "projectUniqueName": "C:\\Users\\Integraciones\\source\\repos\\TravelGateXPrueba\\TravelGateXPrueba\\TravelGateXPrueba.csproj",
         "projectName": "TravelGateXPrueba",
-        "projectPath": "C:\\Users\\Migui\\source\\repos\\TravelgateXPrueba\\TravelGateXPrueba\\TravelGateXPrueba.csproj",
-        "packagesPath": "C:\\Users\\Migui\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Migui\\source\\repos\\TravelgateXPrueba\\TravelGateXPrueba\\obj\\",
+        "projectPath": "C:\\Users\\Integraciones\\source\\repos\\TravelGateXPrueba\\TravelGateXPrueba\\TravelGateXPrueba.csproj",
+        "packagesPath": "C:\\Users\\Integraciones\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Integraciones\\source\\repos\\TravelGateXPrueba\\TravelGateXPrueba\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Migui\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Integraciones\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

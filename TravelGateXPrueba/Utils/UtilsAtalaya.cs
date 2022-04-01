@@ -8,10 +8,10 @@ namespace TravelGateXPrueba
         public ListaHoteles transAtalaya(ListaHotelesAtalaya la)
         {
             ListaHoteles ListaHoteles = new ListaHoteles();
-            ListaHoteles.hotels = new List<Hotels>();
+            ListaHoteles.hotels = new List<Hotel>();
             foreach (var hotel in la.hotels)
             {
-                Hotels hotelTmp = new Hotels();
+                Hotel hotelTmp = new Hotel();
                 hotelTmp.Name = hotel.Name;
                 hotelTmp.City = hotel.City;
                 hotelTmp.Code = hotel.Code;
@@ -19,9 +19,9 @@ namespace TravelGateXPrueba
                 foreach(RoomAtalaya room in hotel.Rooms)
                 {
                     Room roomTmp = new Room();
-                    roomTmp.Code = room.Code;
+                    roomTmp.Room_type = room.Code;
                     roomTmp.Name = room.Name;
-                    roomTmp.Meal_plan = room.Meal_plan;
+                    roomTmp.Meals_plan = room.Meal_plan;
                     roomTmp.Price = room.Price;
                     listRoomTmp.Add(roomTmp);
                 }

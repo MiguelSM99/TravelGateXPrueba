@@ -38,8 +38,8 @@ namespace Classes.TravelGateXPrueba
                                     ListaMealPlanAtalaya atalayaMeals = JsonConvert.DeserializeObject<ListaMealPlanAtalaya>(json);
                                     foreach (var hotel in atalayaHotels.hotels)
                                     {
-                                        ListaRoomAtalaya listaRoomResort = new ListaRoomAtalaya();
-                                        listaRoomResort.rooms_type = new List<RoomAtalaya>();
+                                        ListaRoomAtalaya listaRoomAtalaya = new ListaRoomAtalaya();
+                                        listaRoomAtalaya.rooms_type = new List<RoomAtalaya>();
                                         foreach (RoomAtalaya room in atalayaRooms.rooms_type)
                                         {
                                             foreach (MealPlanAtalaya meal in atalayaMeals.meal_plans)
@@ -50,27 +50,34 @@ namespace Classes.TravelGateXPrueba
                                                     {
                                                         foreach(Ave ave in meal.Hotel.Ave)
                                                         {
-                                                            if(room.Code == ave.Room)
+                                                            if(hotel.Code == "ave")
                                                             {
-                                                                RoomAtalaya roomAtalaya = new RoomAtalaya(null, room.Code, room.Name, meal.Code, ave.Price);
-                                                                listaRoomResort.rooms_type.Add(roomAtalaya);
+                                                                if (room.Code == ave.Room)
+                                                                {
+                                                                    RoomAtalaya roomAtalaya = new RoomAtalaya(null, room.Code, room.Name, meal.Code, ave.Price);
+                                                                    listaRoomAtalaya.rooms_type.Add(roomAtalaya);
+                                                                }
                                                             }
+                                                            
                                                         }
                                                     } if (meal.Hotel.Acs.Count > 0)
                                                     {
                                                         foreach (Acs ac in meal.Hotel.Acs)
                                                         {
-                                                            if (room.Code == ac.Room)
+                                                            if (hotel.Code == "acs")
                                                             {
-                                                                RoomAtalaya roomAtalaya = new RoomAtalaya(null, room.Code, room.Name, meal.Code, ac.Price);
-                                                                listaRoomResort.rooms_type.Add(roomAtalaya);
-                                                            }
+                                                                if (room.Code == ac.Room)
+                                                                {
+                                                                    RoomAtalaya roomAtalaya = new RoomAtalaya(null, room.Code, room.Name, meal.Code, ac.Price);
+                                                                    listaRoomAtalaya.rooms_type.Add(roomAtalaya);
+                                                                }
+                                                            }   
                                                         }
                                                     }
                                                 }
                                             }
                                         }
-                                        hotel.Rooms = listaRoomResort.rooms_type;
+                                        hotel.Rooms = listaRoomAtalaya.rooms_type;
                                     }
                                 }
                             }

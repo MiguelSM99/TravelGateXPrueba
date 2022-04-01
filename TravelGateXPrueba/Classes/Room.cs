@@ -2,26 +2,31 @@
 {
     public class Room
     {
-        private string code;
         private string name;
-        private string meal_plan;
+        private string room_type;
+        private string meals_plan;
         private double price;
 
         public Room()
         {
         }
 
-        public Room(string code, string name, string meal_plan, double price)
+        public Room(string room_type, string name, string meals_plan, double price)
         {
-            this.Code = code;
+            this.Room_type = room_type;
             this.Name = name;
-            this.Meal_plan = meal_plan;
+            this.Meals_plan = meals_plan;
             this.Price = price;
         }
 
-        public string Code { get => code; set => code = value; }
+        public string Room_type { get => room_type; set => room_type = value; }
         public string Name { get => name; set => name = value; }
-        public string Meal_plan { get => meal_plan; set => meal_plan = value; }
+        public string Meals_plan { get => meals_plan; set => meals_plan = value; }
         public double Price { get => price; set => price = value; }
+
+        public class ListaRoom
+        {
+            public List<Room> rooms;
+        }
     }
 }

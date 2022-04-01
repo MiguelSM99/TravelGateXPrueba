@@ -2,18 +2,18 @@
 
 namespace TravelGateXPrueba.Classes
 {
-    public class Hotels
+    public class Hotel
     {
         private string code;
         private string name;
         private string city;
         private List<Room> rooms;
 
-        public Hotels()
+        public Hotel()
         {
         }
 
-        public Hotels(string code, string name, string city, List<Room> rooms)
+        public Hotel(string code, string name, string city, List<Room> rooms)
         {
             this.Code = code;
             this.Name = name;
@@ -29,6 +29,6 @@ namespace TravelGateXPrueba.Classes
 
     public class ListaHoteles
     {
-        public List<Hotels> hotels;
+        public List<Hotel> hotels;
     }
 }
